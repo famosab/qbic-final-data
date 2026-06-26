@@ -1,0 +1,535 @@
+variant-calls:
+  ### QBIC ###
+  #imgag-5
+  imgag-5-qbic-freebayes:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation:
+    path: imgag/bqsr/tumor_5_vs_normal_5.freebayes.filtered.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-5_tumor_5
+    benchmark: imgag-5
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-5-qbic-mutect2-custompon:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 4.6.1.0
+      annotation:
+    path: imgag/bqsr/tumor_5_vs_normal_5.mutect2.custompon.filtered.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-5_tumor_5
+    benchmark: imgag-5
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-5-qbic-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation:
+    path:
+      snvs: imgag/bqsr/tumor_5_vs_normal_5.strelka.somatic_snvs.vcf.gz
+      indels: imgag/bqsr/tumor_5_vs_normal_5.strelka.somatic_indels.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-5
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  imgag-5-qbic-freebayes-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation:
+    path: imgag/no-bqsr/tumor_5_vs_normal_5.freebayes.filtered.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-5_tumor_5
+    benchmark: imgag-5
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-5-qbic-mutect2-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 4.6.1.0
+      annotation:
+    path: imgag/no-bqsr/tumor_5_vs_normal_5.mutect2.filtered.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-5_tumor_5
+    benchmark: imgag-5
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-5-qbic-strelka-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation:
+    path:
+      snvs: imgag/no-bqsr/tumor_5_vs_normal_5.strelka.somatic_snvs.vcf.gz
+      indels: imgag/no-bqsr/tumor_5_vs_normal_5.strelka.somatic_indels.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-5
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  imgag-5-qbic-muse-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation:
+    path: imgag/no-bqsr/tumor_5_vs_normal_5.muse.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-5
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-5-qbic-muse:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation:
+    path: imgag/bqsr/tumor_5_vs_normal_5.muse.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-5
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-5-qbic-varlociraptor-fdr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: imgag-data/qbic/varlociraptor/tumor_5_vs_normal_5.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: imgag-5
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-5-qbic-varlociraptor-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: imgag-data/qbic/varlociraptor/tumor_5_vs_normal_5.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: imgag-5
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+
+  #imgag-10
+  imgag-10-qbic-freebayes:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation:
+    path: imgag-data/qbic/freebayes/tumor_10_vs_normal_10.freebayes.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-10_tumor_10
+    benchmark: imgag-10
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-10-qbic-mutect2-custompon:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 4.6.1.0
+      annotation:
+    path: imgag-data/qbic/mutect2/tumor_10_vs_normal_10.mutect2.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-10_tumor_10
+    benchmark: imgag-10
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-10-qbic-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation:
+    path:
+      snvs: imgag-data/qbic/strelka/tumor_10_vs_normal_10.strelka.somatic_snvs_VEP.ann.vcf.gz
+      indels: imgag-data/qbic/strelka/tumor_10_vs_normal_10.strelka.somatic_indels_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-10
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  imgag-10-qbic-freebayes-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation:
+    path: imgag-data/qbic/freebayes/tumor_10_vs_normal_10.freebayes.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-10_tumor_10
+    benchmark: imgag-10
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-10-qbic-mutect2-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 4.6.1.0
+      annotation:
+    path: imgag-data/qbic/mutect2/tumor_10_vs_normal_10.mutect2.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-10_tumor_10
+    benchmark: imgag-10
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-10-qbic-strelka-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation:
+    path:
+      snvs: imgag-data/qbic/strelka/tumor_10_vs_normal_10.strelka.somatic_snvs_VEP.ann.vcf.gz
+      indels: imgag-data/qbic/strelka/tumor_10_vs_normal_10.strelka.somatic_indels_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-10
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  imgag-10-qbic-muse:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation:
+    path: imgag-data/qbic/muse/tumor_10_vs_normal_10.muse_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-10
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-10-qbic-varlociraptor-fdr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: imgag-data/qbic/varlociraptor/tumor_10_vs_normal_10.freebayes.somatic.varlociraptor.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: imgag-10
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-10-qbic-varlociraptor-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: imgag-data/qbic/varlociraptor/tumor_10_vs_normal_10.freebayes.somatic.varlociraptor.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: imgag-10
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+
+  #imgag-20
+  imgag-20-qbic-freebayes:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation: VEP 115.2
+    path: imgag-data/qbic/freebayes/tumor_20_vs_normal_20.freebayes.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-20_tumor_20
+    benchmark: imgag-20
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-20-qbic-mutect2-custompon:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 4.6.1.0
+      annotation: VEP 115.2
+    path: imgag-data/qbic/mutect2/tumor_20_vs_normal_20.mutect2.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-20_tumor_20
+    benchmark: imgag-20
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-20-qbic-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation: VEP 115.2
+    path:
+      snvs: imgag-data/qbic/strelka/tumor_20_vs_normal_20.strelka.somatic_snvs_VEP.ann.vcf.gz
+      indels: imgag-data/qbic/strelka/tumor_20_vs_normal_20.strelka.somatic_indels_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-20
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  imgag-20-qbic-muse:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation: VEP 115.2
+    path: imgag-data/qbic/muse/tumor_20_vs_normal_20.muse_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-20
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-20-qbic-varlociraptor-fdr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: imgag-data/qbic/varlociraptor/tumor_20_vs_normal_20.freebayes.somatic.varlociraptor.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: imgag-20
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+
+  #imgag-40
+  imgag-40-qbic-freebayes:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation: VEP 115.2
+    path: imgag-data/qbic/freebayes/tumor_40_vs_normal_40.freebayes.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-40_tumor_40
+    benchmark: imgag-40
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-40-qbic-mutect2-custompon:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 4.6.1.0
+      annotation: VEP 115.2
+    path: imgag-data/qbic/mutect2/tumor_40_vs_normal_40.mutect2.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: imgag-40_tumor_40
+    benchmark: imgag-40
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  imgag-40-qbic-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation: VEP 115.2
+    path:
+      snvs: imgag-data/qbic/strelka/tumor_40_vs_normal_40.strelka.somatic_snvs_VEP.ann.vcf.gz
+      indels: imgag-data/qbic/strelka/tumor_40_vs_normal_40.strelka.somatic_indels_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-40
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  imgag-40-qbic-muse:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation: VEP 115.2
+    path: imgag-data/qbic/muse/tumor_40_vs_normal_40.muse_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: imgag-40
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  imgag-40-qbic-varlociraptor-fdr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: imgag-data/qbic/varlociraptor/tumor_40_vs_normal_40.freebayes.somatic.varlociraptor.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: imgag-40
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+
+# Optional for testing: limit to first 10000 reads
+limit-reads: false
+
+# whether evaluation shall happen on grch37
+reference-genome: grch38
+
+# maximum number of entries in the FP and FN tables
+# (this might be exceeded because each chromosome is always fully included)
+max-fp-fn-entries: 300
