@@ -43,3 +43,6 @@ bm-seqc2/results/fp-fn/vcf/
 # bm-imgag and bm-seqc2 callsets
 bm-imgag/results/fp-fn/callsets/
 bm-seqc2/results/fp-fn/callsets/
+
+bm-imgag/*.bam.bai
+bm-seqc2/*.bam.bai
