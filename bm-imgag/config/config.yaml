@@ -155,7 +155,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_5_vs_normal_5.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_5_vs_normal_5.freebayes.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-5
     vaf-field:
@@ -172,7 +172,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_5_vs_normal_5.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_5_vs_normal_5.strelka.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-5
     vaf-field:
@@ -335,7 +335,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_10_vs_normal_10.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_10_vs_normal_10.freebayes.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-10
     vaf-field:
@@ -352,7 +352,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_10_vs_normal_10.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_10_vs_normal_10.strelka.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-10
     vaf-field:
@@ -515,7 +515,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_20_vs_normal_20.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_20_vs_normal_20.freebayes.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-20
     vaf-field:
@@ -532,7 +532,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_20_vs_normal_20.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_20_vs_normal_20.strelka.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-20
     vaf-field:
@@ -695,7 +695,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_40_vs_normal_40.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_40_vs_normal_40.freebayes.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-40
     vaf-field:
@@ -712,7 +712,7 @@ variant-calls:
       recalibration: gatk4 4.6.1.0
       variant-detection: varlociraptor 8.7.4
       annotation:
-    path: imgag-data/qbic/varlociraptor/tumor_40_vs_normal_40.freebayes.somatic.varlociraptor.sorted.vcf.gz
+    path: imgag-data/qbic/varlociraptor/tumor_40_vs_normal_40.strelka.somatic.varlociraptor.fdr-controlled.bcf
     tumor_sample_name: tumor
     benchmark: imgag-40
     vaf-field:

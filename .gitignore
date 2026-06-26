@@ -1,7 +1,45 @@
-{bm-imgag,bm-seqc2}/{.snakemake,logs,resources,tmpdir}
-{bm-imgag,bm-seqc2}/{.snakemake,logs,resources,tmpdir}/*
-{bm-imgag,bm-seqc2}/results/{annotated,coverage,filtered-variants,merge-callsets,normalized-variants,precision-recall,read-alignments,report,stratified-variants,variants,vcfeval}
-{bm-imgag,bm-seqc2}/results/{annotated,coverage,filtered-variants,merge-callsets,normalized-variants,precision-recall,read-alignments,report,stratified-variants,variants,vcfeval}/*
-{bm-imgag,bm-seqc2}/results/fp-fn/{benchmarks,genomes,vcf}
-{bm-imgag,bm-seqc2}/results/fp-fn/{benchmarks,genomes,vcf}/*
-{bm-imgag,bm-seqc2}/results/fp-fn/callsets/*/
+# bm-imgag and bm-seqc2 build artifacts and intermediate files
+bm-imgag/.snakemake/
+bm-imgag/logs/
+bm-imgag/resources/
+bm-imgag/tmpdir/
+bm-seqc2/.snakemake/
+bm-seqc2/logs/
+bm-seqc2/resources/
+bm-seqc2/tmpdir/
+
+# bm-imgag and bm-seqc2 results
+bm-imgag/results/annotated/
+bm-imgag/results/coverage/
+bm-imgag/results/filtered-variants/
+bm-imgag/results/merge-callsets/
+bm-imgag/results/normalized-variants/
+bm-imgag/results/precision-recall/
+bm-imgag/results/read-alignments/
+bm-imgag/results/report/
+bm-imgag/results/stratified-variants/
+bm-imgag/results/variants/
+bm-imgag/results/vcfeval/
+bm-seqc2/results/annotated/
+bm-seqc2/results/coverage/
+bm-seqc2/results/filtered-variants/
+bm-seqc2/results/merge-callsets/
+bm-seqc2/results/normalized-variants/
+bm-seqc2/results/precision-recall/
+bm-seqc2/results/read-alignments/
+bm-seqc2/results/report/
+bm-seqc2/results/stratified-variants/
+bm-seqc2/results/variants/
+bm-seqc2/results/vcfeval/
+
+# bm-imgag and bm-seqc2 fp-fn results
+bm-imgag/results/fp-fn/benchmarks/
+bm-imgag/results/fp-fn/genomes/
+bm-imgag/results/fp-fn/vcf/
+bm-seqc2/results/fp-fn/benchmarks/
+bm-seqc2/results/fp-fn/genomes/
+bm-seqc2/results/fp-fn/vcf/
+
+# bm-imgag and bm-seqc2 callsets
+bm-imgag/results/fp-fn/callsets/
+bm-seqc2/results/fp-fn/callsets/
