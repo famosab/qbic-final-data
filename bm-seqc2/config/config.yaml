@@ -1,59 +1,315 @@
 variant-calls:
-  # Listing of callsets and corresponding paths, representing variant call results
-  # from different pipelines or different configurations of the same pipeline.
-  # Multiple entries are possible.
-  callset:
-    # Optional labels to describe callset in report. Comment out if not needed.
-    # Both labels and values thereof can be freely chosen.
+  ### TRUTH ###
+  seqc2-wes-truth:
     labels:
-      caller: freebayes
-      site: University of Duisburg-Essen
-    # Optional subcategory for separating callsets in the report. Comment out if not needed.
-    subcategory: agilent
-    path: "path/to/unified.vcf.gz" # either path to a unified VCF file
-    # OR, for separate files, use:
-    # path:
-    #   snvs: "path/to/snvs.vcf.gz"
-    #   indels: "path/to/indels.vcf.gz"
-    tumor_sample_name: <tumor-sample-name> # via bcftools query -l <your-vcf>
-    # benchmark to use
-    # see benchmarks in https://github.com/snakemake-workflows/dna-seq-benchmark/blob/main/workflow/resources/presets.yaml
-    # or any custom benchmark name provided below under custom-benchmarks
-    benchmark: giab-na12878-exome
-    vaf-field: # needs to be checked with bcftools view -h
+      site: truth
+    path: resources/variants/seqc2-somatic/all.truth.format-added.vcf.gz
+    benchmark: seqc2-wes
+    tumor_sample_name: truth
+    vaf-field:
+      field: INFO
+      name: TVAF
+  seqc2-ffpe-truth:
+    labels:
+      site: truth
+    path: resources/variants/seqc2-somatic/all.truth.format-added.vcf.gz
+    benchmark: seqc2-ffpe
+    tumor_sample_name: truth
+    vaf-field:
+      field: INFO
+      name: TVAF
+
+  ### QBIC ###
+  # WES
+  seqc2-wes-qbic-freebayes:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/freebayes/tumor-wes_vs_normal-wes.freebayes.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: seqc2-wes_tumor-wes
+    benchmark: seqc2-wes
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  seqc2-wes-qbic-mutect2:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 2.2
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/mutect2/tumor-wes_vs_normal-wes.mutect2.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: seqc2-wes_tumor-wes
+    benchmark: seqc2-wes
+    vaf-field:
       field: FORMAT
       name: AF
-    # Set the reference genome used for variant calling
-    # Supported values: grch37, grch38
-    # A liftover to grch38 will be performed if needed
-    genome-build: grch38
-    # Set to true if your file needs to be translated from UCSC to Ensembl
-    # or point to a file containing contig name replacements
-    rename-contigs: false
+    rename-contigs: true
+  seqc2-wes-qbic-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation: VEP 115.2
+    path:
+      snvs: seqc2-data/qbic/strelka/tumor-wes_vs_normal-wes.strelka.somatic_snvs_VEP.ann.vcf.gz
+      indels: seqc2-data/qbic/strelka/tumor-wes_vs_normal-wes.strelka.somatic_indels_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: seqc2-wes
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  seqc2-wes-qbic-muse:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/muse/tumor-wes_vs_normal-wes.muse_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: seqc2-wes
+    # vaf-field: # muse reports no vaf-field
+    rename-contigs: true
+  seqc2-wes-qbic-varlociraptor:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: seqc2-data/qbic/varlociraptor/tumor-wes_vs_normal-wes.freebayes.somatic.varlociraptor.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: seqc2-wes
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  seqc2-wes-qbic-oncoanalyser:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.6
+      pipeline: nf-core/oncoanalyser 2.2.0
+      adapter-trimming: fastp 0.23.4
+      read-mapping: bwamem2 2.3
+      recalibration: redux 1.2
+      variant-detection: sage 4.1
+      annotation: pave 1.8
+    path: seqc2-data/qbic/oncoanalyser/tumor-wes.pave.somatic.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: tumor-wes
+    benchmark: seqc2-wes
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
 
-# Optional custom benchmarks
-custom-benchmarks:
-  my-custom-benchmark: # custom benchmark name, choose freely (no whitespace allowed)
-    # Truth genome to consider (for now only NA12878 allowed, TODO: CHM)
-    genome: na12878
-    # Path to fastqs with the reads used for variant calling (alternatively, use bam below)
-    fastqs:
-      - path/to/1.fq
-      - path/to/2.fq
-    # Path to bam with the reads used for variant calling (alternatively, use fastqs above)
-    # If both are given, bam is used.
-    # The bam is assumed to be already duplicate-marked, sorted, and indexed.
-    bam: path/to/sample.bam
-    # Optiona path to bai. If not given, inferred from bam path.
-    bai: path/to/sample.bam.bai
-    target-regions: path/to/regions.bed
-    # whether given target regions are on hg19
-    grch37: false
+  # WES skip-bqsr
+  seqc2-wes-qbic-freebayes-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/skip-bqsr/tumor-wes_vs_normal-wes.freebayes.filtered.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: seqc2-wes_tumor-wes
+    benchmark: seqc2-wes
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  seqc2-wes-qbic-mutect2-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 2.2
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/skip-bqsr/tumor-wes_vs_normal-wes.mutect2.filtered.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: seqc2-wes_tumor-wes
+    benchmark: seqc2-wes
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  seqc2-wes-qbic-strelka-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation: VEP 115.2
+    path:
+      snvs: seqc2-data/qbic/skip-bqsr/tumor-wes_vs_normal-wes.strelka.somatic_snvs.vcf.gz
+      indels: seqc2-data/qbic/skip-bqsr/tumor-wes_vs_normal-wes.strelka.somatic_indels.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: seqc2-wes
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  seqc2-wes-qbic-muse-skip-bqsr:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/skip-bqsr/tumor-wes_vs_normal-wes.muse.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: seqc2-wes
+    # vaf-field: # muse reports no vaf-field
+    rename-contigs: true
+  
+  # FFPE
+  seqc2-ffpe-qbic-freebayes:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: freebayes 1.3.10
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/freebayes/tumor-ffpe_vs_normal-ffpe.freebayes.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: seqc2-ffpe_tumor-ffpe
+    benchmark: seqc2-ffpe
+    vaf-field:
+      field: INFO
+      name: AF
+    rename-contigs: true
+  seqc2-ffpe-qbic-mutect2:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: mutect2 2.2
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/mutect2/tumor-ffpe_vs_normal-ffpe.mutect2.filtered_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: seqc2-ffpe_tumor-ffpe
+    benchmark: seqc2-ffpe
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  seqc2-ffpe-qbic-strelka:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: strelka 2.9.10
+      annotation: VEP 115.2
+    path:
+      snvs: seqc2-data/qbic/strelka/tumor-ffpe_vs_normal-ffpe.strelka.somatic_snvs_VEP.ann.vcf.gz
+      indels: seqc2-data/qbic/strelka/tumor-ffpe_vs_normal-ffpe.strelka.somatic_indels_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: seqc2-ffpe
+    # vaf-field: # strelka reports no vaf-field
+    rename-contigs: true
+  seqc2-ffpe-qbic-muse:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: muse 2.1.2
+      annotation: VEP 115.2
+    path: seqc2-data/qbic/muse/tumor-ffpe_vs_normal-ffpe.muse_VEP.ann.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: TUMOR
+    benchmark: seqc2-ffpe
+    # vaf-field: # muse reports no vaf-field
+    rename-contigs: true
+  seqc2-ffpe-qbic-varlociraptor:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.8
+      pipeline: nf-core/sarek 3.6.0
+      adapter-trimming: fastp 0.24.0
+      read-mapping: bwamem 0.7.18
+      recalibration: gatk4 4.6.1.0
+      variant-detection: varlociraptor 8.7.4
+      annotation:
+    path: seqc2-data/qbic/varlociraptor/tumor-ffpe_vs_normal-ffpe.freebayes.somatic.varlociraptor.vcf.gz
+    tumor_sample_name: tumor
+    benchmark: seqc2-ffpe
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
+  seqc2-ffpe-qbic-oncoanalyser:
+    labels:
+      site: qbic
+      workflow-management: Nextflow 25.04.6
+      pipeline: nf-core/oncoanalyser 2.2.0
+      adapter-trimming: fastp 0.23.4
+      read-mapping: bwamem2 2.3
+      recalibration: redux 1.2
+      variant-detection: sage 4.1
+      annotation: pave 1.8
+    path: seqc2-data/qbic/oncoanalyser/tumor-ffpe.pave.somatic.vcf.gz
+    subcategory: qbic
+    tumor_sample_name: tumor-ffpe
+    benchmark: seqc2-ffpe
+    vaf-field:
+      field: FORMAT
+      name: AF
+    rename-contigs: true
 
-# Optional for testing: limit to first 100000 reads
+# Optional for testing: limit to first 10000 reads
 limit-reads: false
 
-# whether evaluation shall happen on grch37 or grch38
+# whether evaluation shall happen on grch37
 reference-genome: grch38
 
 # maximum number of entries in the FP and FN tables

@@ -1,4 +1,29 @@
-variant-calls:
+variant-calls:  
+  ### TRUTH ###
+  imgag-5-truth:
+    labels:
+      site: truth
+    path: resources/variants/na12878-somatic/all.truth.format-added.vcf.gz
+    benchmark: imgag-5
+    tumor_sample_name: truth
+  imgag-10-truth:
+    labels:
+      site: truth
+    path: resources/variants/na12878-somatic/all.truth.format-added.vcf.gz
+    benchmark: imgag-10
+    tumor_sample_name: truth
+  imgag-20-truth:
+    labels:
+      site: truth
+    path: resources/variants/na12878-somatic/all.truth.format-added.vcf.gz
+    benchmark: imgag-20
+    tumor_sample_name: truth
+  imgag-40-truth:
+    labels:
+      site: truth
+    path: resources/variants/na12878-somatic/all.truth.format-added.vcf.gz
+    benchmark: imgag-40
+    tumor_sample_name: truth
   ### QBIC ###
   #imgag-5
   imgag-5-qbic-freebayes:
