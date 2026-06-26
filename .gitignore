@@ -1,0 +1,7 @@
+{bm-imgag,bm-seqc2}/{.snakemake,logs,resources,tmpdir}
+{bm-imgag,bm-seqc2}/{.snakemake,logs,resources,tmpdir}/*
+{bm-imgag,bm-seqc2}/results/{annotated,coverage,filtered-variants,merge-callsets,normalized-variants,precision-recall,read-alignments,report,stratified-variants,variants,vcfeval}
+{bm-imgag,bm-seqc2}/results/{annotated,coverage,filtered-variants,merge-callsets,normalized-variants,precision-recall,read-alignments,report,stratified-variants,variants,vcfeval}/*
+{bm-imgag,bm-seqc2}/results/fp-fn/{benchmarks,genomes,vcf}
+{bm-imgag,bm-seqc2}/results/fp-fn/{benchmarks,genomes,vcf}/*
+{bm-imgag,bm-seqc2}/results/fp-fn/callsets/*/
