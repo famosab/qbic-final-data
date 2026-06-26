@@ -1,0 +1,9 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2,contamination
+imgag-5,XX,0,normal_5,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_2.merged.fastq.gz,0.0
+imgag-5,XX,1,tumor_5,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/5perc_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/5perc_2.merged.fastq.gz,0.2
+imgag-10,XX,0,normal_10,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_2.merged.fastq.gz,0.0
+imgag-10,XX,1,tumor_10,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/10perc_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/10perc_2.merged.fastq.gz,0.2
+imgag-20,XX,0,normal_20,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_2.merged.fastq.gz,0.0
+imgag-20,XX,1,tumor_20,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/20perc_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/20perc_2.merged.fastq.gz,0.2
+imgag-40,XX,0,normal_40,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/normal_2.merged.fastq.gz,0.0
+imgag-40,XX,1,tumor_40,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/40perc_1.merged.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/imgag/40perc_2.merged.fastq.gz,0.2

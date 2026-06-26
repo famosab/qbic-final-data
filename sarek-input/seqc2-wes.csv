@@ -1,0 +1,3 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2,contamination
+seqc2-wes,XX,0,normal-wes,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/seqc2/SRR7890919_WES_cross-site_study_1.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/seqc2/SRR7890919_WES_cross-site_study_2.fastq.gz,0.0
+seqc2-wes,XX,1,tumor-wes,lane_1,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/seqc2/SRR7890918_WES_cross-site_study_1.fastq.gz,/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/benchmarking-data/seqc2/SRR7890918_WES_cross-site_study_2.fastq.gz,0.2
