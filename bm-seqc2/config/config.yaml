@@ -1,6 +1,6 @@
 variant-calls:
   # WES with BQSR
-  seqc2-wes-bqsr-freebayes:
+  seqc2-wes-qbic-freebayes:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -18,7 +18,7 @@ variant-calls:
       field: INFO
       name: AF
     rename-contigs: true
-  seqc2-wes-bqsr-mutect2:
+  seqc2-wes-qbic-mutect2:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -36,7 +36,7 @@ variant-calls:
       field: FORMAT
       name: AF
     rename-contigs: true
-  seqc2-wes-bqsr-strelka:
+  seqc2-wes-qbic-strelka:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -54,7 +54,7 @@ variant-calls:
     benchmark: seqc2-wes
     # vaf-field: # strelka reports no vaf-field
     rename-contigs: true
-  seqc2-wes-bqsr-muse:
+  seqc2-wes-qbic-muse:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -70,7 +70,7 @@ variant-calls:
     benchmark: seqc2-wes
     # vaf-field: # muse reports no vaf-field
     rename-contigs: true
-  seqc2-wes-bqsr-varlociraptor:
+  seqc2-wes-qbic-varlociraptor-fdr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -87,7 +87,7 @@ variant-calls:
       field: FORMAT
       name: AF
     rename-contigs: true
-  seqc2-wes-bqsr-strelka-varlociraptor:
+  seqc2-wes-qbic-varlociraptor-strelka:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -106,7 +106,7 @@ variant-calls:
     rename-contigs: true
 
   # WES skip-bqsr
-  seqc2-wes-skip-bqsr-freebayes:
+  seqc2-wes-qbic-freebayes-skip-bqsr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -124,7 +124,7 @@ variant-calls:
       field: INFO
       name: AF
     rename-contigs: true
-  seqc2-wes-skip-bqsr-mutect2:
+  seqc2-wes-qbic-mutect2-skip-bqsr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -142,7 +142,7 @@ variant-calls:
       field: FORMAT
       name: AF
     rename-contigs: true
-  seqc2-wes-skip-bqsr-strelka:
+  seqc2-wes-qbic-strelka-skip-bqsr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -162,7 +162,7 @@ variant-calls:
     rename-contigs: true
   
   # FFPE with BQSR
-  seqc2-ffpe-bqsr-freebayes:
+  seqc2-ffpe-qbic-freebayes:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -180,7 +180,7 @@ variant-calls:
       field: INFO
       name: AF
     rename-contigs: true
-  seqc2-ffpe-bqsr-mutect2:
+  seqc2-ffpe-qbic-mutect2:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -198,7 +198,7 @@ variant-calls:
       field: FORMAT
       name: AF
     rename-contigs: true
-  seqc2-ffpe-bqsr-strelka:
+  seqc2-ffpe-qbic-strelka:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -216,7 +216,7 @@ variant-calls:
     benchmark: seqc2-ffpe
     # vaf-field: # strelka reports no vaf-field
     rename-contigs: true
-  seqc2-ffpe-bqsr-muse:
+  seqc2-ffpe-qbic-muse:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -232,7 +232,7 @@ variant-calls:
     benchmark: seqc2-ffpe
     # vaf-field: # muse reports no vaf-field
     rename-contigs: true
-  seqc2-ffpe-bqsr-varlociraptor:
+  seqc2-ffpe-qbic-varlociraptor-fdr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -249,7 +249,7 @@ variant-calls:
       field: FORMAT
       name: AF
     rename-contigs: true
-  seqc2-ffpe-bqsr-strelka-varlociraptor:
+  seqc2-ffpe-qbic-varlociraptor-strelka:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -268,7 +268,7 @@ variant-calls:
     rename-contigs: true
 
   # FFPE skip-bqsr
-  seqc2-ffpe-skip-bqsr-freebayes:
+  seqc2-ffpe-qbic-freebayes-skip-bqsr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -286,7 +286,7 @@ variant-calls:
       field: INFO
       name: AF
     rename-contigs: true
-  seqc2-ffpe-skip-bqsr-mutect2:
+  seqc2-ffpe-qbic-mutect2-skip-bqsr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
@@ -304,7 +304,7 @@ variant-calls:
       field: FORMAT
       name: AF
     rename-contigs: true
-  seqc2-ffpe-skip-bqsr-strelka:
+  seqc2-ffpe-qbic-strelka-skip-bqsr:
     labels:
       site: qbic
       workflow-management: Nextflow 25.04.8
