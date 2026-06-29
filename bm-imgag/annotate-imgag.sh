@@ -10,7 +10,7 @@ COV_BED_5="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-01/truth-evaluation/
 
 mkdir -p "$OUT_DIR"
 
-for infile in "$IN_DIR"/imgag-5-ukes*.tsv; do
+for infile in "$IN_DIR"/imgag-5-*.tsv; do
     basename=$(basename "$infile" .tsv)
     outfile="$OUT_DIR/${basename}.csv"
     
@@ -25,7 +25,7 @@ COV_BED_10="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-01/truth-evaluation
 
 mkdir -p "$OUT_DIR"
 
-for infile in "$IN_DIR"/imgag-10-ukes*.tsv; do
+for infile in "$IN_DIR"/imgag-10-*.tsv; do
     basename=$(basename "$infile" .tsv)
     outfile="$OUT_DIR/${basename}.csv"
     
@@ -40,7 +40,7 @@ COV_BED_20="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-01/truth-evaluation
 
 mkdir -p "$OUT_DIR"
 
-for infile in "$IN_DIR"/imgag-20-ukes*.tsv; do
+for infile in "$IN_DIR"/imgag-20-*.tsv; do
     basename=$(basename "$infile" .tsv)
     outfile="$OUT_DIR/${basename}.csv"
     
@@ -55,7 +55,7 @@ COV_BED_40="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-01/truth-evaluation
 
 mkdir -p "$OUT_DIR"
 
-for infile in "$IN_DIR"/imgag-40-ukes*.tsv; do
+for infile in "$IN_DIR"/imgag-40-*.tsv; do
     basename=$(basename "$infile" .tsv)
     outfile="$OUT_DIR/${basename}.csv"
     

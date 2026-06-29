@@ -2,10 +2,12 @@
 bm-imgag/.snakemake/
 bm-imgag/logs/
 bm-imgag/resources/
+bm-imgag/results/intermediate
 bm-imgag/tmpdir/
 bm-seqc2/.snakemake/
 bm-seqc2/logs/
 bm-seqc2/resources/
+bm-seqc2/results/intermediate
 bm-seqc2/tmpdir/
 
 # bm-imgag and bm-seqc2 results
@@ -41,8 +43,8 @@ bm-seqc2/results/fp-fn/genomes/
 bm-seqc2/results/fp-fn/vcf/
 
 # bm-imgag and bm-seqc2 callsets
-bm-imgag/results/fp-fn/callsets/
-bm-seqc2/results/fp-fn/callsets/
+bm-imgag/results/fp-fn/callsets/**/
+bm-seqc2/results/fp-fn/callsets/**/
 
 bm-imgag/*.bai
 bm-seqc2/*.bai
