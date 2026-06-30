@@ -9,7 +9,7 @@ COV_BED_FFPE="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-01/truth-evaluati
 
 mkdir -p "$OUT_DIR"
 
-for infile in "$IN_DIR"/seqc2-ffpe-*-skip-bqsr.*.tsv; do
+for infile in "$IN_DIR"/seqc2-ffpe-*.tsv; do
     basename=$(basename "$infile" .tsv)
     outfile="$OUT_DIR/${basename}.csv"
     
@@ -25,7 +25,7 @@ COV_BED_WES="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-01/truth-evaluatio
 
 mkdir -p "$OUT_DIR"
 
-for infile in "$IN_DIR"/seqc2-wes-*-skip-bqsr.*.tsv; do
+for infile in "$IN_DIR"/seqc2-wes-*.tsv; do
     basename=$(basename "$infile" .tsv)
     outfile="$OUT_DIR/${basename}.csv"
     

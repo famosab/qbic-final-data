@@ -1,0 +1,4 @@
+coverage;chromosome;position;alt_allele;ref_allele;Coverage
+1..10;1;29348559;A;G;5
+50..100;19;56470013;C;T;90
+50..100;22;41435249;C;T;70
