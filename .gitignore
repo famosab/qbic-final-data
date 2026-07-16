@@ -12,6 +12,7 @@ bm-seqc2/tmpdir/
 
 # bm-imgag and bm-seqc2 results
 bm-imgag/results/annotated/
+bm-imgag/results/calculate-vaf/
 bm-imgag/results/coverage/
 bm-imgag/results/filtered-variants/
 bm-imgag/results/merge-callsets/
@@ -23,6 +24,7 @@ bm-imgag/results/stratified-variants/
 bm-imgag/results/variants/
 bm-imgag/results/vcfeval/
 bm-seqc2/results/annotated/
+bm-seqc2/results/calculate-vaf/
 bm-seqc2/results/coverage/
 bm-seqc2/results/filtered-variants/
 bm-seqc2/results/merge-callsets/
@@ -36,15 +38,15 @@ bm-seqc2/results/vcfeval/
 
 # bm-imgag and bm-seqc2 fp-fn results
 bm-imgag/results/fp-fn/benchmarks/
+bm-imgag/results/fp-fn/callsets/
 bm-imgag/results/fp-fn/genomes/
 bm-imgag/results/fp-fn/vcf/
 bm-seqc2/results/fp-fn/benchmarks/
+bm-seqc2/results/fp-fn/callsets/
 bm-seqc2/results/fp-fn/genomes/
 bm-seqc2/results/fp-fn/vcf/
 
-# bm-imgag and bm-seqc2 callsets
-bm-imgag/results/fp-fn/callsets/**/
-bm-seqc2/results/fp-fn/callsets/**/
-
 bm-imgag/*.bai
+bm-imgag/**/*.tbi
 bm-seqc2/*.bai
+bm-seqc2/**/*.tbi

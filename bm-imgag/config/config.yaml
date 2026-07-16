@@ -24,6 +24,7 @@ variant-calls:
     path: resources/variants/na12878-somatic/all.truth.format-added.vcf.gz
     benchmark: imgag-40
     tumor_sample_name: truth
+
   ### QBIC ###
   #imgag-5
   imgag-5-qbic-freebayes:
@@ -40,9 +41,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-5_tumor_5
     benchmark: imgag-5
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-5-qbic-mutect2-custompon:
     labels:
@@ -78,7 +83,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-5
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-5-qbic-freebayes-skip-bqsr:
     labels:
@@ -94,9 +99,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-5_tumor_5
     benchmark: imgag-5
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-5-qbic-mutect2-skip-bqsr:
     labels:
@@ -132,7 +141,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-5
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-5-qbic-muse-skip-bqsr:
     labels:
@@ -216,9 +225,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-10_tumor_10
     benchmark: imgag-10
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-10-qbic-mutect2-custompon:
     labels:
@@ -254,7 +267,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-10
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-10-qbic-freebayes-skip-bqsr:
     labels:
@@ -270,9 +283,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-10_tumor_10
     benchmark: imgag-10
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-10-qbic-mutect2-skip-bqsr:
     labels:
@@ -308,7 +325,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-10
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-10-qbic-muse-skip-bqsr:
     labels:
@@ -392,9 +409,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-20_tumor_20
     benchmark: imgag-20
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-20-qbic-mutect2-custompon:
     labels:
@@ -430,7 +451,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-20
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-20-qbic-freebayes-skip-bqsr:
     labels:
@@ -446,9 +467,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-20_tumor_20
     benchmark: imgag-20
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-20-qbic-mutect2-skip-bqsr:
     labels:
@@ -484,7 +509,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-20
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-20-qbic-muse-skip-bqsr:
     labels:
@@ -568,9 +593,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-40_tumor_40
     benchmark: imgag-40
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-40-qbic-mutect2-custompon:
     labels:
@@ -606,7 +635,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-40
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-40-qbic-freebayes-skip-bqsr:
     labels:
@@ -622,9 +651,13 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: imgag-40_tumor_40
     benchmark: imgag-40
-    vaf-field:
-      field: INFO
-      name: AF
+    vaf-field: tbc
+    vaf-numerator:
+      field: FORMAT
+      name: AO
+    vaf-denominator:
+      field: FORMAT
+      name: RO
     rename-contigs: true
   imgag-40-qbic-mutect2-skip-bqsr:
     labels:
@@ -660,7 +693,7 @@ variant-calls:
     subcategory: qbic
     tumor_sample_name: TUMOR
     benchmark: imgag-40
-    # vaf-field: # strelka reports no vaf-field
+    vaf-field: tbc
     rename-contigs: true
   imgag-40-qbic-muse-skip-bqsr:
     labels:

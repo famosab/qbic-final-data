@@ -10,7 +10,7 @@ configfile: "config/config.yaml"
 # declare https://github.com/snakemake-workflows/dna-seq-benchmark as a module
 module dna_seq_benchmark:
     snakefile: 
-        github("snakemake-workflows/dna-seq-benchmark", path="workflow/Snakefile", commit="f265c4b57ee01197069e611259f0e7491f1a3a29")
+        github("snakemake-workflows/dna-seq-benchmark", path="workflow/Snakefile", tag="v1.17.0")
     config:
         config
 
