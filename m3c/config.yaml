@@ -1,0 +1,79 @@
+executor: slurm
+default-resources:
+  - mem_mb=100000
+  - runtime=24h
+  # - cpus_per_task=32 # you can experiment with this.
+  #                    # ideally the rules should have resource definitions 
+  # - mem_mb_per_cpu=4500 # <= 300000/32/2 likewise good for 
+restart-times: 3
+max-jobs-per-second: 10
+max-status-checks-per-second: 1
+latency-wait: 60
+jobs: unlimited
+keep-going: True
+cores: 64
+
+## Snakemake options
+rerun-incomplete: True
+printshellcmds: True
+use-conda: True
+conda-prefix: /mnt/lustre/groups/nahnsen/nahbu450/pm4onco/.snakemake/conda
+
+## Highmem node for mark_duplicates (benchmark), recalibrate_base_qualities (variant calling)
+## Long node for sort_alignments (variant calling, wgs)
+## set time limit for index_vcf and 
+set-resources:
+    vembrane_table_unique_fp_fn:
+        runtime: 30m
+    reformat_fp_fn_tp_tables:
+        runtime: 30m
+    norm_vcf:
+        runtime: 15m
+    index_vcf:
+        runtime: 15m
+    calc_precision_recall:
+        runtime: 30m
+    extract_fp_fn_tp:
+        runtime: 30m
+    extract_fp_fn:
+        runtime: 30m
+    collect_stratifications_fp_fn:
+        runtime: 30m
+    collect_stratifications:
+        runtime: 30m
+    stratify_results:
+        runtime: 30m
+    benchmark_variants:
+        runtime: 2h
+    remove_non_pass:
+        runtime: 1h
+    add_genotype_field:
+        runtime: 1h
+    mark_duplicates:
+        mem_mb: 455000
+        slurm_partition: cpu2-hm
+    recalibrate_base_qualities:
+        mem_mb: 455000
+        slurm_partition: cpu2-hm
+    sort_alignments:
+        mem_mb: 455000
+        runtime: 6d
+        slurm_partition: cpu3-long
+    freebayes:
+        mem_mb: 455000
+        slurm_partition: cpu2-hm
+    annotate_candidate_variants:
+        mem_mb: 455000
+        slurm_partition: cpu2-hm
+
+# prevent to many jobs per group
+group-components:
+  - "annotation=1"
+
+groups:
+  # Assign these to arbitrary, unique names to force them apart
+  annotated_index: "ungrouped_idx"
+  annotate_vcfs: "ungrouped_vcf"
+  # Rules from the new error (Add these!)
+  gather_annotated_calls: "g_gather"
+  annotate_variants: "g_vars"
