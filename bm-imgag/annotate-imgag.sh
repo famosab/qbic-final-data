@@ -2,7 +2,7 @@
 
 IN_DIR="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-06/qbic-final-data/bm-imgag/results/fp-fn/callsets"
 OUT_DIR="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-06/qbic-final-data/bm-imgag/results/fp-fn-cov-ann"
-SCRIPT="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/pm4onco-ap4-benchmark/scripts/annotate-coverage.sh"
+SCRIPT="/mnt/lustre/groups/nahnsen/nahbu450/pm4onco/2026-06/qbic-final-data/annotate-coverage.sh"
 FORMAT="script"  # or "vembrane" if needed
 
 # imgag-5
